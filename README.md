@@ -1,5 +1,24 @@
-# Unborn Template
+# Unborn Name History
 
-A template for libraries with Typescript and Github Actions
+A library for getting Minecraft Java name history data after the removal of the public API. Do note that some values may be missing and some values will be estimates. You can identify these with the `accurate` field.
 
-Change package name, remove private, and add NPM_TOKEN to Github secrets. Then, of course, add code.
+## Usage
+
+### Javascript
+
+```js
+const { getNameHistory } = require('unborn-name-history')
+
+getNameHistory('Notch').then(profile => {
+    console.log(profile)
+})
+```
+
+### Typescript
+
+```ts
+import { getNameHistory } from 'unborn-name-history'
+
+const profile = await getNameHistory('Notch')
+console.log(profile)
+```
